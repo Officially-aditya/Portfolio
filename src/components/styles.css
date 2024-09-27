@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    background-color: #000000;
+}
+
+/* Container for both sidebar and header */
+.app-container {
+    display: flex; /* Maintain layout with flexbox */
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    position: relative; /* Set positioning context */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 30vh; /* Fixed width for the sidebar */
+    background-image: url('./assets/background-image.jpg');
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0%;
+    right: inherit;
+    margin-top: 5px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: row; /* Sidebar on the left */
+    }
+
+    .sidebar {
+        width: 250px; /* Fixed width for sidebar */
+        height: 100vh; /* Full height of viewport */
+        position: fixed; /* Keep it fixed on the left */
+        padding: 20px; /* Maintain padding for aesthetics */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+        z-index: 5; /* Ensure it is below the header */
+        margin: 5px;
+        margin-right: 5px;
+        top: 100px;
+    }
+
+    .header {
+        width: 100%; /* Adjust width for header */
+        margin: 5px; /* Remove any margin */
+        padding: 10px; /* Adjust padding */
+        position: fixed; /* Fix header at the top */
+        top: 0; /* Align to the top */
+        z-index: 10; /* Ensure it appears above content */
+        background-color: #E5E5E5; /* Match sidebar color */
+    }
+
+    .content {
+        margin-left: 50vh; /* Leave space for sidebar */
+        padding: 80px 20px 20px; /* Space for header */
+        height: calc(100vh - 80px); /* Full height minus header height */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+        position: relative; /* Keep it in flow */
+        left: 300px;
+        top: 100px;
+        padding-left: 10%;
+    }
+}
+
+
+/* Header Styles */
+.header {
+    width: calc(100% - 60px); /* Full width minus sidebar width */
+    background-image: url('./assets/background-image.jpg'); /* Same background as sidebar */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center; /* Center text */
+    margin-left: 10px; /* Space between sidebar and header */
+    flex-shrink: 0;
+    margin-right: 20px;
+    margin-top: 5px;
+    height: 45px;
+
+}
+
+/* Content Styles */
+.content {
+    font-family: 'Exo 2';
+    flex: 1; /* Takes the remaining space */
+    padding: 20px; /* Padding for inner spacing */
+    background-image: url('./assets/background-image.jpg'); /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-left: 10px; /* Space between sidebar and content */
+    margin-top: 10px; /* Space between header and content */
+    margin-right: 10px;
+    padding-top: 30px;
+    padding-right: 40%;
+    padding-left: 10%;
+    height: 400px;
+}
+
+/* Optional: Content Text Styles */
+.content h2 {
+    margin-top: 0; /* Remove top margin for first heading */
+    color: #333; /* Darker text color for better readability */
+}
+
+.content p {
+    color: #555; /* Lighter gray text for paragraph */
+    line-height: 1.6; /* Better line spacing */
+}
+
+
+/* Header Text Styles */
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Sidebar Links Styles */
+.sidebar-links {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.sidebar-links li {
+    margin: 10px 0; /* Space between links */
+}
+
+.sidebar-links a {
+    text-decoration: none; /* Remove underline */
+    background-color: #ffffff; /* Button color */
+    color: #FCA311; /* Text color */
+    padding: 10px 20px; /* Padding for button-like appearance */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    display: block; /* Make the link block-level to take full width */
+    width: 100%; /* Make links take full width of parent */
+    max-width: 200px; /* Optional: Limit the width for aesthetics */
+    text-align: center; /* Center text inside the link */
+}
+
+.sidebar-links a:hover {
+    background-color: #14213D; /* Darker color on hover */
+}
+
+.content {
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+
+}
+
+
